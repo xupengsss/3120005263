@@ -1,11 +1,13 @@
 package xp;
 
+import Token.Tokenizer;
 import com.sun.org.slf4j.internal.Logger;
 import com.sun.org.slf4j.internal.LoggerFactory;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -111,8 +113,7 @@ public class CosineSimilarity {
 
         //similarity=a.b/|a|*|b|
         //divide参数说明：aabb被除数,9表示小数点后保留9位，最后一个表示用标准的四舍五入法
-        double cos = BigDecimal.valueOf(ab.get()).divide(aabb, 9, BigDecimal.ROUND_HALF_UP).doubleValue();
-        return cos;
+        return BigDecimal.valueOf(ab.get()).divide(aabb, 9, RoundingMode.HALF_UP).doubleValue();
     }
 
 

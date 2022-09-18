@@ -1,6 +1,7 @@
-package xp;
+package domain;
 
 import utils.readTxt;
+import xp.CosineSimilarity;
 
 import java.util.List;
 import java.util.Scanner;
@@ -25,7 +26,7 @@ public class myMain {
             index =scan.nextInt();
             switch (index){
                 case 1:readPre();break;
-                case 2:readScan();;break;
+                case 2:readScan();break;
 
             }
         }
@@ -35,7 +36,7 @@ public class myMain {
         List<String> list= readTxt.readString1();
         content1= list.get(0);
         content2=list.get(1);
-        double  score=CosineSimilarity.getSimilarity(content1,content2);
+        double  score= CosineSimilarity.getSimilarity(content1,content2);
         System.out.println("相似度："+score);
 
         score=CosineSimilarity.getSimilarity(content1,content1);

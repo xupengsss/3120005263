@@ -1,7 +1,9 @@
-package xp;
+package Token;
 
 import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.seg.common.Term;
+import xp.Word;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
