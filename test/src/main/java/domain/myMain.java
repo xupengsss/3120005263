@@ -37,10 +37,13 @@ public class myMain {
         content1= list.get(0);
         content2=list.get(1);
         double  score= CosineSimilarity.getSimilarity(content1,content2);
-        System.out.println("相似度："+score);
-
+        String  str = String.format("%.2f",score);
+        double number = Double.parseDouble(str);
+        System.out.println("相似度："+number);
         score=CosineSimilarity.getSimilarity(content1,content1);
-        System.out.println("相似度："+score);
+          str = String.format("%.2f",score);
+         number = Double.parseDouble(str);
+        System.out.println("相似度："+number);
     }
     public static void readScan(){
       Scanner scan=new Scanner(System.in);
@@ -49,8 +52,9 @@ public class myMain {
         System.out.println("请输入抄袭文章:");
         content2=scan.next();
         double  score=CosineSimilarity.getSimilarity(content1,content2);
-        System.out.println("相似度："+score);
-
+       String str = String.format("%.2f",score);
+      double  number = Double.parseDouble(str);
+        System.out.println("相似度："+number);
 
     }
 
